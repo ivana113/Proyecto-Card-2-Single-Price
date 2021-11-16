@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cyan:hsl(179, 62%, 43%);
+    --yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+body{
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+    background-color: var(--light-gray);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin: auto;
+    width: 50%;
+    height: 60vh;
+    box-shadow: -4px 13px 29px -5px rgba(0,0,0,0.35);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    'community community' 
+    'subscription whyus';
+    overflow: hidden;
+}
+
+.community{
+    grid-area: community;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.community__title{
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 1.563rem;
+
+}
+
+.community__subtitle{
+    color: var(--yellow);
+}
+
+.community__paragrah{
+    color: var(--grayish-blue);
+    margin-right: 40px;
+}
+.subscription{
+    grid-area: subscription;
+    background-color: var(--cyan);
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.subscription__title, span{
+    font-weight: 700;
+    color: #fff;
+}
+
+.subscription__subtitle{
+    color: var(--light-gray);
+    font-weight: 400;
+}
+span{
+    font-size: 1.875rem;
+}
+
+.subscription__paragrah{
+    color: var(--light-gray);
+    font-size: 1.125rem;
+}
+
+.subscription__btn{
+    display: block;
+    text-decoration: none;
+    width: 80%;
+    padding: 15px 30px;
+    background-color: var(--yellow);
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: -4px 13px 29px -5px rgba(0,0,0,0.35);
+}
+
+.whyus{
+    grid-area: 'whyus';
+    background-color: hsl(179, 55%, 55%);
+    padding: 30px;
+}
+
+.whyus__title{
+    color: #ffff;
+    font-weight: 700;
+    font-size: 1.563rem;
+    margin-bottom: 20px;
+}
+
+.whyus__paragrah{
+    color: var(--light-gray);
+    font-weight: 300;
+    margin-right: 120px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+@media screen and (max-width:768px){
+    .container{ 
+        width: 60%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas: 
+        'community' 
+        'subscription'
+        'whyus';
+        overflow: auto;
+        height: 90vh;
+    }
+
+    .subscription,
+    .community{
+      gap: 25px;
+    }
+
+    .community__paragrah{
+       line-height: 1.5;
+    }
+    
+    .subscription__btn{
+        margin-bottom: 20px;
+        padding: 10px 25px;
+        width: 70%;
+    }
+
+    .subscription__title{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .container{
+        width: 80%;    
+    }
+    
+}
+
+
+@media screen and (max-width:375px){
+
+    .community__paragrah{
+        margin-right:0;
+        font-size: 0.938rem;
+    }
+    
+    .subscription{
+        padding: 10px 20px;
+    }
+
+    .subscription__paragrah,
+    .subscription__subtitle{
+        font-size: 0.938rem;
+    }
+
+
+    span{
+        font-size: 1.25rem;
+    }
+
+    .subscription__btn{
+        
+        width: 90%;
+        padding: 9px 15px;
+       
+    }
+
+    .whyus__paragrah{
+        margin-right: 0;
+        font-size: 00.938rem;
+    }
+
+    .whyus__title,
+    .subscription__title,
+    .community__title{
+        font-size: 1.438rem;
+    }
+    
+}
